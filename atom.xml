@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>上港的博客</title>
+  
+  <subtitle>欢迎加入</subtitle>
+  <link href="https://lyk990.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://lyk990.github.io/"/>
+  <updated>2023-07-16T05:12:25.264Z</updated>
+  <id>https://lyk990.github.io/</id>
+  
+  <author>
+    <name>上港</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写了个辅助学习vite的小工具（mini-vite）</title>
+    <link href="https://lyk990.github.io/2023/07/13/hello-world/"/>
+    <id>https://lyk990.github.io/2023/07/13/hello-world/</id>
+    <published>2023-07-13T09:42:58.193Z</published>
+    <updated>2023-07-16T05:12:25.264Z</updated>
+    
+    <content type="html"><![CDATA[<p>话不多说先贴上仓库地址 <a href="https://github.com/lyk990/mini-vite">mini-vite</a></p><h2 id="看源码的几个问题"><a href="#看源码的几个问题" class="headerlink" title="看源码的几个问题"></a>看源码的几个问题</h2><ul><li>封装的方法太多，不知道从哪个方法看起</li><li>随便一个文件就是一两千行代码，看得头皮发麻</li><li>不知道该怎么去debug，到底应该在哪个方法里面debug</li></ul><p>没关系，这些问题在我这都能解决</p><h2 id="我做了什么"><a href="#我做了什么" class="headerlink" title="我做了什么"></a>我做了什么</h2><p><strong>移除了vite仓库中的所有注释和其他对于所要学习的vite功能用不上的方法，并为核心方法添加上了注释</strong></p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7db7ceded8814fe0aab77fa2ea09eee9~tplv-k3u1fbpfcp-watermark.image" alt="image.png"><br><strong>为需要实现的核心功能画上了简易的思维导图</strong></p><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/23e7e3ce9f0a4019880e28b25b82395e~tplv-k3u1fbpfcp-watermark.image" alt="image.png"><br><strong>配置了debug功能，直接就能在代码内debug</strong></p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4e344d2d22da4870a4aa7513b531abde~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p><blockquote><p>本仓库只实现了vite比较常用的几个功能，后续在vite的学习中，我可能也会不断的往mini-vite里面加上新功能</p><p>失业程序员待业中，希望大家能给几个star，让我能找工作稍微轻松点，毕业一年，年限卡的死死的，面试都没几个，谢谢大家了</p></blockquote><p>再次贴上仓库地址 <a href="https://github.com/lyk990/mini-vite">mini-vite</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://juejin.cn/book/7050063811973218341?scrollMenuIndex=1">深入浅出vite</a></li><li><a href="https://space.bilibili.com/329245232/channel/collectiondetail?sid=1181310">bilibili.我们一起学前端·vite源码解析</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;话不多说先贴上仓库地址 &lt;a href=&quot;https://github.com/lyk990/mini-vite&quot;&gt;mini-vite&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;看源码的几个问题&quot;&gt;&lt;a href=&quot;#看源码的几个问题&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
