@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test111</title>
-    <url>/2023/07/19/test/</url>
-    <content><![CDATA[<h1 id="asdasdasdasd"><a href="#asdasdasdasd" class="headerlink" title="asdasdasdasd"></a>asdasdasdasd</h1>]]></content>
+    <title>写了个辅助学习vite的小工具</title>
+    <url>/posts/5862c0a6/</url>
+    <content><![CDATA[<h2 id="仓库地址-mini-vite"><a href="#仓库地址-mini-vite" class="headerlink" title="仓库地址 mini-vite"></a>仓库地址 <a href="https://github.com/lyk990/mini-vite">mini-vite</a></h2><h2 id="文章链接"><a href="#文章链接" class="headerlink" title="文章链接"></a><a href="https://juejin.cn/post/7239173192493514808">文章链接</a></h2>]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>前端项目管理</tag>
       </tags>
   </entry>
   <entry>
-    <title>写了个辅助学习vite的小工具（mini-vite）</title>
-    <url>/2023/07/13/%E5%86%99%E4%BA%86%E4%B8%AAmini-vie/</url>
-    <content><![CDATA[<p>话不多说先贴上仓库地址 <a href="https://github.com/lyk990/mini-vite">mini-vite</a><br>文章链接<a href="https://juejin.cn/post/7239173192493514808">mini-vite</a></p>
+    <title>文章模板</title>
+    <url>/posts/401e296e/</url>
+    <content><![CDATA[<h2 id="初始化项目分类及标签"><a href="#初始化项目分类及标签" class="headerlink" title="初始化项目分类及标签"></a>初始化项目分类及标签</h2><p>tags: </p>
+<ul>
+<li>前端面试</li>
+<li>前端管理及架构</li>
+<li>前端监控</li>
+<li>前端性能优化</li>
+<li>前端源码解析</li>
+<li>前端项目管理</li>
+</ul>
+<p>categories: </p>
+<ul>
+<li>前端</li>
+<li>后端</li>
+<li>计算机基础</li>
+</ul>
 ]]></content>
       <categories>
         <category>后端</category>
       </categories>
       <tags>
-        <tag>开源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>创建我的第一篇文章</title>
-    <url>/2023/07/19/%E5%88%9B%E5%BB%BA%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="我的第一篇文章"><a href="#我的第一篇文章" class="headerlink" title="我的第一篇文章"></a>我的第一篇文章</h1>]]></content>
-      <categories>
-        <category>计算机基础</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
+        <tag>前端项目管理</tag>
+        <tag>前端面试</tag>
+        <tag>前端管理及架构</tag>
+        <tag>前端监控</tag>
+        <tag>前端性能优化</tag>
+        <tag>前端源码解析</tag>
       </tags>
   </entry>
 </search>
