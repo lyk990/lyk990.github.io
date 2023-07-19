@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test111</title>
+    <url>/2023/07/19/test/</url>
+    <content><![CDATA[<h1 id="asdasdasdasd"><a href="#asdasdasdasd" class="headerlink" title="asdasdasdasd"></a>asdasdasdasd</h1>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>写了个辅助学习vite的小工具（mini-vite）</title>
-    <url>/2023/07/13/hello-world/</url>
+    <url>/2023/07/13/%E5%86%99%E4%BA%86%E4%B8%AAmini-vie/</url>
     <content><![CDATA[<p>话不多说先贴上仓库地址 <a href="https://github.com/lyk990/mini-vite">mini-vite</a><br>文章链接<a href="https://juejin.cn/post/7239173192493514808">mini-vite</a></p>
 ]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>开源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>创建我的第一篇文章</title>
+    <url>/2023/07/19/%E5%88%9B%E5%BB%BA%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="我的第一篇文章"><a href="#我的第一篇文章" class="headerlink" title="我的第一篇文章"></a>我的第一篇文章</h1>]]></content>
+      <categories>
+        <category>计算机基础</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
   </entry>
 </search>
