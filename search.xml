@@ -12,37 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>文章分类模板</title>
-    <url>/posts/401e296e/</url>
-    <content><![CDATA[<h2 id="初始化项目分类及标签"><a href="#初始化项目分类及标签" class="headerlink" title="初始化项目分类及标签"></a>初始化项目分类及标签</h2><p>tags: </p>
-<ul>
-<li>前端面试</li>
-<li>前端架构管理</li>
-<li>前端监控</li>
-<li>前端性能优化</li>
-<li>前端源码解析</li>
-<li>前端项目管理</li>
-</ul>
-<p>categories: </p>
-<ul>
-<li>前端</li>
-<li>后端</li>
-<li>计算机基础</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>前端项目管理</tag>
-        <tag>前端面试</tag>
-        <tag>前端架构管理</tag>
-        <tag>前端性能优化</tag>
-        <tag>前端源码解析</tag>
-        <tag>前端监控</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深圳前端一年半，投了两个月简历，第一场面试</title>
     <url>/posts/2a476d98/</url>
     <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
@@ -129,6 +98,37 @@
       </categories>
       <tags>
         <tag>前端面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文章分类模板</title>
+    <url>/posts/401e296e/</url>
+    <content><![CDATA[<h2 id="初始化项目分类及标签"><a href="#初始化项目分类及标签" class="headerlink" title="初始化项目分类及标签"></a>初始化项目分类及标签</h2><p>tags: </p>
+<ul>
+<li>前端面试</li>
+<li>前端架构管理</li>
+<li>前端监控</li>
+<li>前端性能优化</li>
+<li>前端源码解析</li>
+<li>前端项目管理</li>
+</ul>
+<p>categories: </p>
+<ul>
+<li>前端</li>
+<li>后端</li>
+<li>计算机基础</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>前端项目管理</tag>
+        <tag>前端面试</tag>
+        <tag>前端架构管理</tag>
+        <tag>前端性能优化</tag>
+        <tag>前端源码解析</tag>
+        <tag>前端监控</tag>
       </tags>
   </entry>
   <entry>
