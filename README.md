@@ -6,3 +6,6 @@
 
 ### 前端项目管理
 [写了个辅助学习vite的小工具（mini-vite）](https://github.com/lyk990/lyk990.github.io/issues/2)
+
+### 前端架构管理
+[AOP在前端编程中的应用](https://github.com/lyk990/lyk990.github.io/issues/4)
