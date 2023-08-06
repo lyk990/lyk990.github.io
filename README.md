@@ -4,6 +4,8 @@
 
 [输入一个URL发生了什么](https://github.com/lyk990/lyk990.github.io/issues/3)
 
+[JavaScript手写代码](https://github.com/lyk990/lyk990.github.io/issues/5)
+
 ### 前端项目管理
 [写了个辅助学习vite的小工具（mini-vite）](https://github.com/lyk990/lyk990.github.io/issues/2)
 
