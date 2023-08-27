@@ -6,6 +6,8 @@
 
 [JavaScript手写代码](https://github.com/lyk990/lyk990.github.io/issues/5)
 
+[坐标深圳，面试了一个三年经验的前端](https://github.com/lyk990/lyk990.github.io/issues/7)
+
 ### 前端项目管理
 [写了个辅助学习vite的小工具（mini-vite）](https://github.com/lyk990/lyk990.github.io/issues/2)
 
