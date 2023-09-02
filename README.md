@@ -15,3 +15,5 @@
 [AOP在前端编程中的应用](https://github.com/lyk990/lyk990.github.io/issues/4)
 
 [AOP装饰函数在前端中的应用](https://github.com/lyk990/lyk990.github.io/issues/6)
+
+[怎么写出好看的代码?](https://github.com/lyk990/lyk990.github.io/issues/8)
