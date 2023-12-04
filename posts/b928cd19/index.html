@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>以一名初级前端的视角来理解架构 | 上港的博客</title><meta name="author" content="上港"><meta name="copyright" content="上港"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="先说一下我自己的观点，架构其实并没有那么的高大上，前端初学者都可以尝试去理解这个概念，并不是只有架构师才需要涉及。从代码设计，到应用设计再到系统设计，其实处处都是架构。从代码实现和具体业务中抽象出一幅有着各种各样关联性的架构图。  架构思维架构思维的建立实际开发经验到一两年之后，应对大部分的业务开发应该问题不大了，这个时候可能就会自然而然的思考，各种组件封装，函数封装等，让自己的代码尽量不那么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="以一名初级前端的视角来理解架构">
+<meta property="og:url" content="https://lyk990.github.io/posts/b928cd19/">
+<meta property="og:site_name" content="上港的博客">
+<meta property="og:description" content="先说一下我自己的观点，架构其实并没有那么的高大上，前端初学者都可以尝试去理解这个概念，并不是只有架构师才需要涉及。从代码设计，到应用设计再到系统设计，其实处处都是架构。从代码实现和具体业务中抽象出一幅有着各种各样关联性的架构图。  架构思维架构思维的建立实际开发经验到一两年之后，应对大部分的业务开发应该问题不大了，这个时候可能就会自然而然的思考，各种组件封装，函数封装等，让自己的代码尽量不那么">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/u7kATMIhBV6xnn8S6SWe--1--zh01e.jpg">
+<meta property="article:published_time" content="2023-12-04T15:29:25.000Z">
+<meta property="article:modified_time" content="2023-12-04T15:34:11.968Z">
+<meta property="article:author" content="上港">
+<meta property="article:tag" content="前端架构管理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/u7kATMIhBV6xnn8S6SWe--1--zh01e.jpg"><link rel="shortcut icon" href="/image/favicon.jpg"><link rel="canonical" href="https://lyk990.github.io/posts/b928cd19/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://file.crazywong.com/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://file.crazywong.com/npm/@fancyapps/ui@latest/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: 上港","link":"链接: ","source":"来源: 上港的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://file.crazywong.com/npm/flickr-justified-gallery@latest/dist/fjGallery.min.js',
+      css: 'https://file.crazywong.com/npm/flickr-justified-gallery@latest/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '以一名初级前端的视角来理解架构',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-04 23:34:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="alternate" href="/atom.xml" title="上港的博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/image/loading.gif" data-lazy-src="/image/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/u7kATMIhBV6xnn8S6SWe--1--zh01e.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="上港的博客"><span class="site-name">上港的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">以一名初级前端的视角来理解架构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2023-12-04T15:29:25.000Z" title="发表于 2023-12-04 23:29:25">2023-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="以一名初级前端的视角来理解架构"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<blockquote>
+<p>先说一下我自己的观点，<strong>架构</strong>其实并没有那么的高大上，前端初学者都可以尝试去理解这个概念，并不是只有架构师才需要涉及。从代码设计，到应用设计再到系统设计，其实处处都是架构。<strong>从代码实现和具体业务中抽象出一幅有着各种各样关联性的架构图。</strong></p>
+</blockquote>
+<h2 id="架构思维"><a href="#架构思维" class="headerlink" title="架构思维"></a>架构思维</h2><h3 id="架构思维的建立"><a href="#架构思维的建立" class="headerlink" title="架构思维的建立"></a>架构思维的建立</h3><p>实际开发经验到一两年之后，应对大部分的业务开发应该问题不大了，这个时候可能就会自然而然的思考，各种组件封装，函数封装等，让自己的代码尽量不那么的’shit’，这个时候其实就开始建立起了代码设计层级的思考了</p>
+<h4 id="代码级设计"><a href="#代码级设计" class="headerlink" title="代码级设计"></a>代码级设计</h4><p>从各种各样的名词：<strong>高内聚、低耦合、健壮性、可读性、复用性、松散性、可维护、可扩展等</strong></p>
+<p>从各种各样的设计模式：<strong>单例、策略、中介、工厂、发布订阅、观察者等</strong></p>
+<p>从各种各样的设计原则：<strong>单一原则、最小知识原则、开放封闭原则等</strong></p>
+<p>代码层面上的设计除了一系列技术上的各式各样的原则之外，还应包括各种各样的规范，比如变量命名、目录结构、代码提交等。</p>
+<p>在cv久了之后，也会思考<code>模块化设计</code>和<code>组件化开发</code>，结合业务去思考模块化开发的临界条件，即什么场景下需要做封装，什么场景下需要解耦，哪些代码可以做封装，这里到底是全局统一封装还是组件内封装。会去考虑代码的各种设计，降低代码的耦合度，提高可复用性。</p>
+<p>在进行模块化设计时，按功能拆分成独立的模块，每个模块负责一个特定的功能或者一组相关的功能。</p>
+<p>在进行组件化开发时，将UI和业务逻辑划分为独立的组件。需要保证这些组件可以被复用，同时也是仅承担一个特定的功能</p>
+<p>同时会生成自己的一套代码规范、目录规范、命名规范、代码提交规范等。</p>
+<h4 id="应用级设计"><a href="#应用级设计" class="headerlink" title="应用级设计"></a>应用级设计</h4><p>应用级设计涉及整个系统的组织、结构和交互，各个应用是系统架构的进一步功能级的细化，具体的实施细则都是放在各个应用之间实现的，随着系统规模增大，代码复杂度上升。难以扩展和维护，于是便抽离出各种各样的应用设计，如状态管理、路由管理、请求处理、ui组件库等。</p>
+<p>需要结合实际开发场景做不同的应用技术选型，就好比我现在开发的后台管理系统一样，它是在vben的基础上进行开发的，选择它的原因有如下几点</p>
+<ul>
+<li>功能强大，封装的组件和功能足以满足日常业务开发</li>
+<li>vben2.10，采用monorepo架构，对于目前规划的项目后续的版本迭代会有所帮助</li>
+<li>采用的技术栈最起码两年内不会过时</li>
+<li>有着强大的社区生态</li>
+<li>当然最重要的一点是，上家公司就是用vben开发的，对它稍微熟悉一点</li>
+</ul>
+<h4 id="系统级设计"><a href="#系统级设计" class="headerlink" title="系统级设计"></a>系统级设计</h4><p>我理解的系统级设计可能不仅是技术上的一些设计，它可能还囊括团队技术规范、新人培养、 团队成长、前后端联调、git工作流等各种操作。</p>
+<p>从业务需求出发，确定系统的整体架构，考虑系统的规模和复杂性。选择合适的前端框架或库。</p>
+<p>在项目开发前期，最好是输出各式文档，如代码规范、git规范、项目文档等，这有助于团队成员更容易理解和维护代码。 最好是能Code Review,在大家开发思维和开发经验不一致的情况下，这也许能统一大家的代码风格，同时也能避免程序员们闭门造车。文档的规范力度不一定足够，最好是能加上eslint</p>
+<p>在业务开发进入正轨的时候，就可以去对项目的技术和业务进行优化，偿还之前所欠下的技术债了，同时还可以对团队或一些技术方案的设计做一些调整。</p>
+<p>日常重复性的业务开发占用了大量时间，导致团队成员没有时间提升自己了。这个时候也可以考虑提升一下团队能力了，技术分享和Code Review都是非常好的方式，</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://lyk990.github.io">上港</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lyk990.github.io/posts/b928cd19/">https://lyk990.github.io/posts/b928cd19/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lyk990.github.io" target="_blank">上港的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84%E7%AE%A1%E7%90%86/">前端架构管理</a></div><div class="post_share"><div class="social-share" data-image="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/u7kATMIhBV6xnn8S6SWe--1--zh01e.jpg" data-sites="twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://file.crazywong.com/npm/butterfly-extsrc@latest/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://file.crazywong.com/npm/butterfly-extsrc@latest/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/eb0b5d9f/" title="面试官：说一下vue3响应式"><img class="cover" src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/VO2AGjpS9gOJN1RY1vzq--1--sxjwk.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">面试官：说一下vue3响应式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/803cab72/" title="AOP装饰函数在前端中的应用"><img class="cover" src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/AOP-Decoration.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-13</div><div class="title">AOP装饰函数在前端中的应用</div></div></a></div><div><a href="/posts/4e6f4a5d/" title="AOP在前端编程中的应用"><img class="cover" src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/AOPInFrontEnd.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-30</div><div class="title">AOP在前端编程中的应用</div></div></a></div><div><a href="/posts/401e296e/" title="文章分类模板"><img class="cover" src= "/image/loading.gif" data-lazy-src="https://file.crazywong.com/gh/jerryc127/CDN/img/material-6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-19</div><div class="title">文章分类模板</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/image/loading.gif" data-lazy-src="/image/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">上港</div><div class="author-info__description">上港的个人博客,欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/lyk990"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lyk990" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1477435414@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">狗都不干前端 | dogs don't even do the front end</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E6%80%9D%E7%BB%B4"><span class="toc-number">1.</span> <span class="toc-text">架构思维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E6%80%9D%E7%BB%B4%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">架构思维的建立</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.1.</span> <span class="toc-text">代码级设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">应用级设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.3.</span> <span class="toc-text">系统级设计</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/b928cd19/" title="以一名初级前端的视角来理解架构"><img src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/u7kATMIhBV6xnn8S6SWe--1--zh01e.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="以一名初级前端的视角来理解架构"/></a><div class="content"><a class="title" href="/posts/b928cd19/" title="以一名初级前端的视角来理解架构">以一名初级前端的视角来理解架构</a><time datetime="2023-12-04T15:29:25.000Z" title="发表于 2023-12-04 23:29:25">2023-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/eb0b5d9f/" title="面试官：说一下vue3响应式"><img src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/VO2AGjpS9gOJN1RY1vzq--1--sxjwk.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试官：说一下vue3响应式"/></a><div class="content"><a class="title" href="/posts/eb0b5d9f/" title="面试官：说一下vue3响应式">面试官：说一下vue3响应式</a><time datetime="2023-09-17T13:21:31.000Z" title="发表于 2023-09-17 21:21:31">2023-09-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2cb0a095/" title="怎么写出好看的代码？"><img src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/H8kZW1C1p31YvI6qEpSd--1--j16qn.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="怎么写出好看的代码？"/></a><div class="content"><a class="title" href="/posts/2cb0a095/" title="怎么写出好看的代码？">怎么写出好看的代码？</a><time datetime="2023-09-02T14:23:52.000Z" title="发表于 2023-09-02 22:23:52">2023-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9de14610/" title="坐标深圳，面试了一个三年经验的前端"><img src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/threefrontend.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="坐标深圳，面试了一个三年经验的前端"/></a><div class="content"><a class="title" href="/posts/9de14610/" title="坐标深圳，面试了一个三年经验的前端">坐标深圳，面试了一个三年经验的前端</a><time datetime="2023-08-27T07:17:47.000Z" title="发表于 2023-08-27 15:17:47">2023-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/803cab72/" title="AOP装饰函数在前端中的应用"><img src= "/image/loading.gif" data-lazy-src="https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/AOP-Decoration.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AOP装饰函数在前端中的应用"/></a><div class="content"><a class="title" href="/posts/803cab72/" title="AOP装饰函数在前端中的应用">AOP装饰函数在前端中的应用</a><time datetime="2023-08-13T14:25:16.000Z" title="发表于 2023-08-13 22:25:16">2023-08-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://lyk990-my-blog.oss-cn-shenzhen.aliyuncs.com/front-end/u7kATMIhBV6xnn8S6SWe--1--zh01e.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By 上港</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://file.crazywong.com/npm/hexo-theme-butterfly@latest/source/js/utils.min.js"></script><script src="https://file.crazywong.com/npm/hexo-theme-butterfly@latest/source/js/main.min.js"></script><script src="https://file.crazywong.com/npm/@fancyapps/ui@latest/dist/fancybox/fancybox.umd.min.js"></script><script src="https://file.crazywong.com/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://file.crazywong.com/npm/vanilla-lazyload@latest/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://file.crazywong.com/npm/mermaid@latest/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer="defer" id="ribbon" src="https://file.crazywong.com/npm/butterfly-extsrc@latest/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script src="https://file.crazywong.com/npm/pjax@latest/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://file.crazywong.com/npm/hexo-theme-butterfly@latest/source/js/search/local-search.min.js"></script></div></div></body></html>
